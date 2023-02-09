@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: allow
+Build-Jdk: 17.0.4
+Implementation-Title: Project_3_1_2_v3
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: Project_3_1_2_v3
+Main-Class: ${start-class}
+
