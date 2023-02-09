@@ -22,7 +22,7 @@ public class UserController {
     }
 
     @GetMapping("/show/{id}")   //показывает детали одного юзера
-    public String showUser(Model model, @PathVariable("id") Long id) {
+    public String showUser(Model model, @PathVariable("id") int id) {
         model.addAttribute("showUser", userService.showUser(id));
         return "show";
     }
@@ -40,19 +40,19 @@ public class UserController {
     }
 
     @GetMapping("/update/{id}") //форма апдейта юзера
-    public String updateUser(Model model, @PathVariable("id") Long id) {
+    public String updateUser(Model model, @PathVariable("id") int id) {
         model.addAttribute("updateUser", userService.showUser(id));
         return("update");
     }
 
     @PatchMapping(value = "/update/{id}")   //апдейт юзера и показ всех юзеров
-    public String update(@ModelAttribute("updatedUser") User user, @PathVariable("id") Long id) {
+    public String update(@ModelAttribute("updatedUser") User user, @PathVariable("id") int id) {
         userService.update(id, user);
         return "redirect:/";
     }
 
     @DeleteMapping(value = "/show/{id}")    //удаление юзера
-    public String deleteUser(@PathVariable("id") Long id) {
+    public String deleteUser(@PathVariable("id") int id) {
         userService.delete(id);
         return "redirect:/";
     }

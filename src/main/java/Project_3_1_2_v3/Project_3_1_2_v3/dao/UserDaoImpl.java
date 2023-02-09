@@ -20,7 +20,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User showUser(Long id) {
+    public User showUser(int id) {
         return entityManager.find(User.class, id);
     }
 
@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDao {
 
     @Transactional
     @Override
-    public void update(Long id, User user) {
+    public void update(int id, User user) {
         User userToUpdate = showUser(id);
         userToUpdate.setFirst_name(user.getFirst_name());
         userToUpdate.setLast_name(user.getLast_name());
@@ -43,7 +43,7 @@ public class UserDaoImpl implements UserDao {
 
     @Transactional
     @Override
-    public void delete(Long id) {
+    public void delete(int id) {
         entityManager.remove(entityManager.find(User.class, id));
     }
 

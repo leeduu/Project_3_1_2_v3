@@ -9,8 +9,8 @@ import java.util.Objects;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     @Column(name = "first_name")
     private String first_name;
     @Column(name = "last_name")
@@ -18,7 +18,7 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    public User(String first_name, String last_name, String email, Long id) {
+    public User(String first_name, String last_name, String email, int id) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
@@ -43,11 +43,11 @@ public class User {
         this.last_name = last_name;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
